@@ -110,7 +110,7 @@ difftime_office_hours_no_NA <-
 
 time_as_duration <-
   function(x)
-    lubridate::as.duration(x - lubridate::floor_date(x, unit = "day")) %>% return
+    lubridate::as.duration(difftime(x, lubridate::floor_date(x, unit = "day"), unit="secs")) %>% return
 
 #' Number of working days, atomic
 #' Calculates number of work days, currently just by week days mon-fri
